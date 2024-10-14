@@ -1,13 +1,19 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { DEFAULT_LOCALE } from "@src/i18n";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body className="antialiased">
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
+class MyDocument extends Document {
+  render() {
+    const currentLocale =
+      this.props.__NEXT_DATA__.query.locale || DEFAULT_LOCALE;
+    return (
+      <Html lang={currentLocale as string}>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
+export default MyDocument;

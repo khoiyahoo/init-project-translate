@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.container {
+    @apply my-0 mx-auto px-4 lg:px-6 sm:max-w-none md:max-w-none lg:max-w-[1024px];
+}
+:root {
+    --font-noto-sans: "Noto Sans JP", sans-serif;
+    --font-inter: "Inter", sans-serif;
+}
